@@ -239,6 +239,7 @@ function library:New(TituloString)
 			TextButton_3.TextScaled = true
 			TextButton_3.TextSize = 14.000
 			TextButton_3.TextWrapped = true
+			TextButton_3.BorderMode = Enum.BorderMode.Inset
 
 			Frame.Parent = TextButton_3
 			Frame.BackgroundColor3 = Color3.fromRGB(181, 97, 255)
