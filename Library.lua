@@ -178,6 +178,7 @@ function library:New(TituloString)
 			TextButton.Parent = Container2_2
 			TextButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 			TextButton.BorderColor3 = library.color1
+			TextButton.BorderMode = Enum.BorderMode.Inset
 			TextButton.Position = UDim2.new(0.0339425579, 0, 0.0263157897, 0)
 			TextButton.Size = UDim2.new(0, 358, 0, 19)
 			TextButton.Visible = true
@@ -212,6 +213,7 @@ function library:New(TituloString)
 			TextButton_2.TextScaled = true
 			TextButton_2.TextSize = 14.000
 			TextButton_2.TextWrapped = true
+			TextButton_2.BorderMode = Enum.BorderMode.Inset
 
 			TextLabel.Parent = TextButton_2
 			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
@@ -261,6 +263,7 @@ function library:New(TituloString)
 			TextButton_3.TextScaled = true
 			TextButton_3.TextSize = 14.000
 			TextButton_3.TextWrapped = true
+			TextButton_3.BorderMode = Enum.BorderMode.Inset
 
 			Frame.Parent = TextButton_3
 			Frame.BackgroundColor3 = Color3.fromRGB(181, 97, 255)
