@@ -1,4 +1,6 @@
-local library = {}	
+local library = {
+	color1 = Color3.fromRGB(162, 8, 252),
+}	
 
 function library:New(TituloString)
 	local ScreenGui = Instance.new("ScreenGui")
@@ -15,7 +17,7 @@ function library:New(TituloString)
 	Main.Name = "Main"
 	Main.Parent = ScreenGui
 	Main.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
-	Main.BorderColor3 = Color3.fromRGB(89, 80, 140)
+	Main.BorderColor3 = library.color1
 	Main.BorderSizePixel = 2
 	Main.Position = UDim2.new(0.178433895, 0, 0.0535714291, 0)
 	Main.Size = UDim2.new(0, 500, 0, 500)
@@ -55,11 +57,10 @@ function library:New(TituloString)
 			end
 		end)
 	end)
-	
 	Titulo.Name = "Titulo"
 	Titulo.Parent = Main
 	Titulo.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
-	Titulo.BorderColor3 = Color3.fromRGB(89, 80, 140)
+	Titulo.BorderColor3 = self.color1
 	Titulo.BorderSizePixel = 0
 	Titulo.Size = UDim2.new(0, 100, 0, 30)
 	Titulo.Font = Enum.Font.SourceSans
@@ -86,7 +87,7 @@ function library:New(TituloString)
 	TabsHolder.Name = "TabsHolder"
 	TabsHolder.Parent = Main
 	TabsHolder.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-	TabsHolder.BorderColor3 = Color3.fromRGB(89, 80, 140)
+	TabsHolder.BorderColor3 = library.color1
 	TabsHolder.BorderSizePixel = 2
 	TabsHolder.Position = UDim2.new(0, 0, 0.0599999987, 0)
 	TabsHolder.Size = UDim2.new(0, 100, 0, 470)
@@ -106,8 +107,29 @@ function library:New(TituloString)
 	Containers.Parent = Container2
 
 	
-	local amogus = {}
+	local amogus = {
+		color1 = library.color1,
+	}
+
+	local objectsToUpdate = {
+		Main,
+		TabsHolder,
+		Container2,
+		Titulo,
+	}
 	
+	function amogus:changeColor1(colorwe)
+		for _, obj in ipairs(objectsToUpdate) do
+			obj.BorderColor3 = colorwe
+		end
+	end
+	function amogus:UIToggle()
+		if not Main.Visible then
+			Main.Visible = true
+		else
+			Main.Visible = false
+		end
+	end
 	
 	function amogus:CreateTab(name) 
 		local TextButton = Instance.new("TextButton")
@@ -116,7 +138,7 @@ function library:New(TituloString)
 		
 		TextButton.Parent = TabsHolder
 		TextButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-		TextButton.BorderColor3 = Color3.fromRGB(159, 143, 249)
+		TextButton.BorderColor3 = library.color1
 		TextButton.BorderSizePixel = 2
 		TextButton.Size = UDim2.new(0, 100, 0, 30)
 		TextButton.Font = Enum.Font.SourceSans
@@ -155,7 +177,7 @@ function library:New(TituloString)
 			local TextButton = Instance.new("TextButton")
 			TextButton.Parent = Container2_2
 			TextButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-			TextButton.BorderColor3 = Color3.fromRGB(159, 143, 249)
+			TextButton.BorderColor3 = library.color1
 			TextButton.Position = UDim2.new(0.0339425579, 0, 0.0263157897, 0)
 			TextButton.Size = UDim2.new(0, 358, 0, 19)
 			TextButton.Visible = true
@@ -181,7 +203,7 @@ function library:New(TituloString)
 			local TextLabel = Instance.new("TextLabel")
 			TextButton_2.Parent = Container2_2
 			TextButton_2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-			TextButton_2.BorderColor3 = Color3.fromRGB(159, 143, 249)
+			TextButton_2.BorderColor3 = library.color1
 			TextButton_2.Position = UDim2.new(0.0339425579, 0, 0.0986842066, 0)
 			TextButton_2.Size = UDim2.new(0, 358, 0, 19)
 			TextButton_2.Font = Enum.Font.SourceSans
@@ -229,7 +251,7 @@ function library:New(TituloString)
 			local ActionText = Instance.new("TextLabel")
 			TextButton_3.Parent = Container2_2
 			TextButton_3.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-			TextButton_3.BorderColor3 = Color3.fromRGB(159, 143, 249)
+			TextButton_3.BorderColor3 = library.color1
 			TextButton_3.Position = UDim2.new(0.0313315913, 0, 0.199561402, 0)
 			TextButton_3.Size = UDim2.new(0, 358, 0, 19)
 			TextButton_3.ZIndex = 2
@@ -239,7 +261,6 @@ function library:New(TituloString)
 			TextButton_3.TextScaled = true
 			TextButton_3.TextSize = 14.000
 			TextButton_3.TextWrapped = true
-			TextButton_3.BorderMode = Enum.BorderMode.Inset
 
 			Frame.Parent = TextButton_3
 			Frame.BackgroundColor3 = Color3.fromRGB(181, 97, 255)
@@ -308,7 +329,7 @@ function library:New(TituloString)
 			Separador.Name = "Separador"
 			Separador.Parent = Container2_2
 			Separador.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-			Separador.BorderColor3 = Color3.fromRGB(159, 143, 249)
+			Separador.BorderColor3 = library.color1
 			Separador.BorderSizePixel = 0
 			Separador.Position = UDim2.new(0.0326370746, 0, 0.154999986, 0)
 			Separador.Size = UDim2.new(0, 358, 0, 25)
@@ -425,7 +446,7 @@ function library:New(TituloString)
 			colorHeader.Size = UDim2.new(0, 358, 0, 33)
 			colorHeader.ClipsDescendants = true
 			colorHeader.BorderSizePixel = 1
-			colorHeader.BorderColor3 = Color3.fromRGB(159, 143, 249)
+			colorHeader.BorderColor3 = library.color1
 			colorHeader.BorderMode = Enum.BorderMode.Inset
 
 			touch.Name = "touch"
@@ -472,7 +493,7 @@ function library:New(TituloString)
 			colorInners.Position = UDim2.new(0, 0, 0.255319148, 0)
 			colorInners.Size = UDim2.new(0, 358, 0, 105)
 			colorInners.BorderSizePixel = 1
-			colorInners.BorderColor3 = Color3.fromRGB(159, 143, 249)
+			colorInners.BorderColor3 = library.color1
 
 			rgb.Name = "rgb"
 			rgb.Parent = colorInners
@@ -515,29 +536,16 @@ function library:New(TituloString)
 
 			toggleDisabled.Name = "toggleDisabled"
 			toggleDisabled.Parent = colorInners
-			toggleDisabled.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			toggleDisabled.BackgroundTransparency = 1.000
+			toggleDisabled.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			toggleDisabled.BackgroundTransparency = 0
 			toggleDisabled.Position = UDim2.new(0.7049999833106995, 0, 0.5, 0)
 			toggleDisabled.Size = UDim2.new(0, 21, 0, 21)
-			toggleDisabled.Image = "rbxassetid://3926309567"
 			toggleDisabled.ImageColor3 = Color3.fromRGB(130, 4, 6)
 			toggleDisabled.ImageRectOffset = Vector2.new(628, 420)
 			toggleDisabled.ImageRectSize = Vector2.new(48, 48)
 
-			toggleEnabled.Name = "toggleEnabled"
-			toggleEnabled.Parent = colorInners
-			toggleEnabled.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			toggleEnabled.BackgroundTransparency = 1.000
-			toggleEnabled.Position = UDim2.new(0.7049999833106995, 0, 0.5, 0)
-			toggleEnabled.Size = UDim2.new(0, 21, 0, 21)
-			toggleEnabled.Image = "rbxassetid://3926309567"
-			toggleEnabled.ImageColor3 = Color3.fromRGB(29, 103, 32)
-			toggleEnabled.ImageRectOffset = Vector2.new(784, 420)
-			toggleEnabled.ImageRectSize = Vector2.new(48, 48)
-			toggleEnabled.ImageTransparency = 1.000
-
 			onrainbow.Name = "onrainbow"
-			onrainbow.Parent = toggleEnabled
+			onrainbow.Parent = toggleDisabled
 			onrainbow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			onrainbow.BackgroundTransparency = 1.000
 			onrainbow.Position = UDim2.new(2.90643607e-06, 0, 0, 0)
@@ -649,15 +657,11 @@ function library:New(TituloString)
 			end
 			local function togglerainbow()
 				if rainbow then
-					game.TweenService:Create(toggleEnabled, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-						ImageTransparency = 1
-					}):Play()
+					toggleDisabled.BackgroundColor3 = Color3.fromRGB(255,0,0)
 					rainbow = false
 					rainbowconnection:Disconnect()
 				else
-					game.TweenService:Create(toggleEnabled, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-						ImageTransparency = 0
-					}):Play()
+					toggleDisabled.BackgroundColor3 = Color3.fromRGB(0,255,0)
 					rainbow = true
 					rainbowconnection = rs.RenderStepped:Connect(function()
 						setrgbcolor({zigzag(counter),1,1})
@@ -679,9 +683,148 @@ function library:New(TituloString)
 			end)
 			setcolor({h,s,v})
 		end
+		function proLib:CreateKeyBind(keytext, first, callback)
+			keytext = keytext or "KeybindText"
+			callback = callback or function() end
+			local oldKey = first.Name
+			local keybindElement = Instance.new("TextButton")
+			local UICorner = Instance.new("UICorner")
+			local togName = Instance.new("TextLabel")
+			local viewInfo = Instance.new("ImageButton")
+			local touch = Instance.new("ImageLabel")
+			local Sample = Instance.new("ImageLabel")
+			local togName_2 = Instance.new("TextLabel")
+
+			local ms = game.Players.LocalPlayer:GetMouse()
+			local uis = game:GetService("UserInputService")
+			local sample = Sample
+
+			keybindElement.BorderMode = Enum.BorderMode.Inset
+			keybindElement.BorderColor3 = Color3.fromRGB(162, 8, 252)
+			keybindElement.Name = "keybindElement"
+			keybindElement.Parent = Container2_2
+			keybindElement.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+			keybindElement.ClipsDescendants = true
+			keybindElement.Size = UDim2.new(0, 358, 0, 33)
+			keybindElement.AutoButtonColor = false
+			keybindElement.Font = Enum.Font.SourceSans
+			keybindElement.Text = ""
+			keybindElement.TextColor3 = Color3.fromRGB(0, 0, 0)
+			keybindElement.TextSize = 14.000
+			keybindElement.MouseButton1Click:Connect(function(e) 
+				if not focusing then
+					togName_2.Text = ". . ."
+					local a, b = game:GetService('UserInputService').InputBegan:wait();
+					if a.KeyCode.Name ~= "Unknown" then
+						togName_2.Text = a.KeyCode.Name
+						oldKey = a.KeyCode.Name;
+					end
+					local c = sample:Clone()
+					c.Parent = keybindElement
+					local x, y = (ms.X - c.AbsolutePosition.X), (ms.Y - c.AbsolutePosition.Y)
+					c.Position = UDim2.new(0, x, 0, y)
+					local len, size = 0.35, nil
+					if keybindElement.AbsoluteSize.X >= keybindElement.AbsoluteSize.Y then
+						size = (keybindElement.AbsoluteSize.X * 1.5)
+					else
+						size = (keybindElement.AbsoluteSize.Y * 1.5)
+					end
+					c:TweenSizeAndPosition(UDim2.new(0, size, 0, size), UDim2.new(0.5, (-size / 2), 0.5, (-size / 2)), 'Out', 'Quad', len, true, nil)
+					for i = 1, 10 do
+					c.ImageTransparency = c.ImageTransparency + 0.05
+						wait(len / 12)
+					end
+				end
+			end)
+	
+			game:GetService("UserInputService").InputBegan:Connect(function(current, ok) 
+				if not ok then 
+					if current.KeyCode.Name == oldKey then 
+						callback()
+					end
+				end
+			end)
+
+
+			Sample.Name = "Sample"
+			Sample.Parent = keybindElement
+			Sample.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Sample.BackgroundTransparency = 1.000
+			Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
+			Sample.ImageColor3 = Color3.fromRGB(255,0,0)
+			Sample.ImageTransparency = 1
+			Sample.Visible = false
+
+			
+			togName.Name = "togName"
+			togName.Parent = keybindElement
+			togName.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+			togName.BackgroundTransparency = 1.000
+			togName.Position = UDim2.new(0.096704483, 0, 0.272727281, 0)
+			togName.Size = UDim2.new(0, 222, 0, 14)
+			togName.Font = Enum.Font.GothamSemibold
+			togName.Text = keytext
+			togName.RichText = true
+			togName.Visible = true
+			togName.TextColor3 = Color3.fromRGB(255,255,255)
+			togName.TextSize = 14.000
+			togName.TextXAlignment = Enum.TextXAlignment.Left
+
+			local oHover = false
+			keybindElement.MouseEnter:Connect(function()
+				if not focusing then
+					oHover = true
+				end 
+			end)
+			keybindElement.MouseLeave:Connect(function()
+				if not focusing then
+					oHover = false
+				end
+			end)        
+
+
+			touch.Name = "touch"
+			touch.Parent = keybindElement
+			touch.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			touch.BackgroundTransparency = 1.000
+			touch.BorderColor3 = Color3.fromRGB(27, 42, 53)
+			touch.Position = UDim2.new(0.0199999996, 0, 0.180000007, 0)
+			touch.Size = UDim2.new(0, 21, 0, 21)
+			touch.Image = "rbxassetid://3926305904"
+			touch.ImageColor3 = Color3.fromRGB(255,0,0)
+			touch.ImageRectOffset = Vector2.new(364, 284)
+			touch.ImageRectSize = Vector2.new(36, 36)
+			touch.Visible = false
+
+
+			togName_2.Name = "togName"
+			togName_2.Parent = keybindElement
+			togName_2.BorderSizePixel = 1
+			togName_2.BorderColor3 = Color3.fromRGB(162, 8, 252)
+			togName_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			togName_2.BackgroundTransparency = 1.000
+			togName_2.Position = UDim2.new(0.727386296, 0, 0.272727281, 0)
+			togName_2.Size = UDim2.new(0, 70, 0, 14)
+			togName_2.Font = Enum.Font.GothamSemibold
+			togName_2.Text = oldKey
+			togName_2.TextColor3 = Color3.fromRGB(255,255,255)
+			togName_2.TextSize = 14.000
+			togName_2.TextXAlignment = Enum.TextXAlignment.Right   
+
+			coroutine.wrap(function()
+				while task.wait() do
+					if not oHover then
+					end
+					togName_2.TextColor3 = Color3.fromRGB(255,255,255)
+					touch.ImageColor3 = Color3.fromRGB(255,255,255)
+					togName.BackgroundColor3 = Color3.fromRGB(255,0,0)
+					togName.TextColor3 = Color3.fromRGB(255,255,255)
+					Sample.ImageColor3 = Color3.fromRGB(255,0,0)
+				end
+			end)()
+		end
 		return proLib
 	end
 	return amogus
-end	
-
+end
 return library
