@@ -5,7 +5,7 @@ local tab1 = main:CreateTab("1") --tab
 tab1:CreateButton("TEXT", function() --button
     print("hi")
 end)
-tab1:CreateToggle("HELLO MADAFAKA", function(v)
+tab1:CreateToggle("HELLO MADAFAKA", function(v) --toggle
     print(v)
 end)
 tab1:Separador("TEXT") --separator
