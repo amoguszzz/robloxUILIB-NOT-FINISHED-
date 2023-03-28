@@ -218,8 +218,8 @@ function library:New(TituloString)
 			TextLabel.Parent = TextButton_2
 			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
 			TextLabel.BorderSizePixel = 0
-			TextLabel.Position = UDim2.new(0.921787739, 0, 0, 0)
-			TextLabel.Size = UDim2.new(0, 28, 0, 19)
+			TextLabel.Position = UDim2.new(0.9, 0, 0.25, 0)
+			TextLabel.Size = UDim2.new(0, 21, 0, 9)
 			TextLabel.Font = Enum.Font.SourceSans
 			TextLabel.Text = ""
 			TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -482,7 +482,7 @@ function library:New(TituloString)
 			colorCurrent.Name = "colorCurrent"
 			colorCurrent.Parent = colorHeader
 			colorCurrent.BackgroundColor3 = defcolor
-			colorCurrent.Position = UDim2.new(0.792613626, 0, 0.212121218, 0)
+			colorCurrent.Position = UDim2.new(0.85, 0, 0.212121218, 0)
 			colorCurrent.Size = UDim2.new(0, 42, 0, 18)
 
 
