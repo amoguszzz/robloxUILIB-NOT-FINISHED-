@@ -1,3 +1,4 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/amoguszzz/pipowareUiLib-NOT-FINISHED-/main/Library.lua"))()
 local main = library:New("test") -- new library
 local tab1 = main:CreateTab("1") --tab
 
