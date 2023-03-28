@@ -682,3 +682,5 @@ function library:New(TituloString)
 	end
 	return amogus
 end	
+
+return library
