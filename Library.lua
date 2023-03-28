@@ -20,7 +20,7 @@ function library:New(TituloString)
 	Main.BorderColor3 = library.color1
 	Main.BorderSizePixel = 2
 	Main.Position = UDim2.new(0.178433895, 0, 0.0535714291, 0)
-	Main.Size = UDim2.new(0, 500, 0, 500)
+	Main.Size = UDim2.new(0, 550, 0, 550)
 	
 	task.spawn(function() --make draggable
 		local UserInputService = game:GetService("UserInputService")
@@ -90,7 +90,7 @@ function library:New(TituloString)
 	TabsHolder.BorderColor3 = library.color1
 	TabsHolder.BorderSizePixel = 2
 	TabsHolder.Position = UDim2.new(0, 0, 0.0599999987, 0)
-	TabsHolder.Size = UDim2.new(0, 100, 0, 470)
+	TabsHolder.Size = UDim2.new(0, 110, 0, 515)
 
 	UIListLayout.Parent = TabsHolder
 	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -101,7 +101,7 @@ function library:New(TituloString)
 	Container2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Container2.BorderSizePixel = 2
 	Container2.Position = UDim2.new(0.217999995, 0, 0.0759999976, 0)
-	Container2.Size = UDim2.new(0, 383, 0, 456)
+	Container2.Size = UDim2.new(0, 422, 0, 500)
 
 	Containers.Name = "Containers"
 	Containers.Parent = Container2
@@ -117,7 +117,9 @@ function library:New(TituloString)
 		Container2,
 		Titulo,
 	}
-	
+	function amogus:UnloadLIB()
+		ScreenGui:Destroy()
+	end
 	function amogus:changeColor1(colorwe)
 		for _, obj in ipairs(objectsToUpdate) do
 			obj.BorderColor3 = colorwe
@@ -140,7 +142,7 @@ function library:New(TituloString)
 		TextButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 		TextButton.BorderColor3 = library.color1
 		TextButton.BorderSizePixel = 2
-		TextButton.Size = UDim2.new(0, 100, 0, 30)
+		TextButton.Size = UDim2.new(0, 110, 0, 30)
 		TextButton.Font = Enum.Font.SourceSans
 		TextButton.Text = name
 		TextButton.TextColor3 = Color3.fromRGB(244, 244, 244)
@@ -154,7 +156,7 @@ function library:New(TituloString)
 		Container2_2.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
 		Container2_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Container2_2.Position = UDim2.new(0, 1, 0, 1)
-		Container2_2.Size = UDim2.new(0, 383, 0, 456)
+		Container2_2.Size = UDim2.new(0, 422, 0, 500)
 		
 		UIListLayout_2.Parent = Container2_2
 		UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -180,7 +182,7 @@ function library:New(TituloString)
 			TextButton.BorderColor3 = library.color1
 			TextButton.BorderMode = Enum.BorderMode.Inset
 			TextButton.Position = UDim2.new(0.0339425579, 0, 0.0263157897, 0)
-			TextButton.Size = UDim2.new(0, 358, 0, 19)
+			TextButton.Size = UDim2.new(0, 389, 0, 19)
 			TextButton.Visible = true
 			TextButton.Font = Enum.Font.SourceSans
 			TextButton.Text = Text
@@ -206,7 +208,7 @@ function library:New(TituloString)
 			TextButton_2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 			TextButton_2.BorderColor3 = library.color1
 			TextButton_2.Position = UDim2.new(0.0339425579, 0, 0.0986842066, 0)
-			TextButton_2.Size = UDim2.new(0, 358, 0, 19)
+			TextButton_2.Size = UDim2.new(0, 389, 0, 19)
 			TextButton_2.Font = Enum.Font.SourceSans
 			TextButton_2.Text = text
 			TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -255,7 +257,7 @@ function library:New(TituloString)
 			TextButton_3.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 			TextButton_3.BorderColor3 = library.color1
 			TextButton_3.Position = UDim2.new(0.0313315913, 0, 0.199561402, 0)
-			TextButton_3.Size = UDim2.new(0, 358, 0, 19)
+			TextButton_3.Size = UDim2.new(0, 389, 0, 19)
 			TextButton_3.ZIndex = 2
 			TextButton_3.Font = Enum.Font.SourceSans
 			TextButton_3.Text = ""
@@ -335,7 +337,7 @@ function library:New(TituloString)
 			Separador.BorderColor3 = library.color1
 			Separador.BorderSizePixel = 0
 			Separador.Position = UDim2.new(0.0326370746, 0, 0.154999986, 0)
-			Separador.Size = UDim2.new(0, 358, 0, 25)
+			Separador.Size = UDim2.new(0, 389, 0, 25)
 			Separador.Font = Enum.Font.SourceSans
 			Separador.Text = texto
 			Separador.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -391,7 +393,7 @@ function library:New(TituloString)
 			colorElement.BackgroundTransparency = 1.000
 			colorElement.ClipsDescendants = true
 			colorElement.Position = UDim2.new(0, 0, 0.566834569, 0)
-			colorElement.Size = UDim2.new(0, 358, 0, 33)
+			colorElement.Size = UDim2.new(0, 389, 0, 33)
 			colorElement.AutoButtonColor = false
 			colorElement.Font = Enum.Font.SourceSans
 			colorElement.Text = ""
@@ -401,7 +403,7 @@ function library:New(TituloString)
 				if not focusing then
 					if colorOpened then
 						colorOpened = false
-						colorElement:TweenSize(UDim2.new(0, 358, 0, 33), "InOut", "Linear", 0.08)
+						colorElement:TweenSize(UDim2.new(0, 389, 0, 33), "InOut", "Linear", 0.08)
 						wait(0.1)
 						local c = sample:Clone()
 						c.Parent = btn
@@ -421,7 +423,7 @@ function library:New(TituloString)
 						c:Destroy()
 					else
 						colorOpened = true
-						colorElement:TweenSize(UDim2.new(0, 358, 0, 141), "InOut", "Linear", 0.08, true)
+						colorElement:TweenSize(UDim2.new(0, 389, 0, 141), "InOut", "Linear", 0.08, true)
 						wait(0.1)
 						local c = sample:Clone()
 						c.Parent = btn
@@ -446,7 +448,7 @@ function library:New(TituloString)
 			colorHeader.Name = "colorHeader"
 			colorHeader.Parent = colorElement
 			colorHeader.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-			colorHeader.Size = UDim2.new(0, 358, 0, 33)
+			colorHeader.Size = UDim2.new(0, 389, 0, 33)
 			colorHeader.ClipsDescendants = true
 			colorHeader.BorderSizePixel = 1
 			colorHeader.BorderColor3 = library.color1
@@ -494,7 +496,7 @@ function library:New(TituloString)
 			colorInners.Parent = colorElement
 			colorInners.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 			colorInners.Position = UDim2.new(0, 0, 0.255319148, 0)
-			colorInners.Size = UDim2.new(0, 358, 0, 105)
+			colorInners.Size = UDim2.new(0, 389, 0, 105)
 			colorInners.BorderSizePixel = 1
 			colorInners.BorderColor3 = library.color1
 
@@ -708,7 +710,7 @@ function library:New(TituloString)
 			keybindElement.Parent = Container2_2
 			keybindElement.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 			keybindElement.ClipsDescendants = true
-			keybindElement.Size = UDim2.new(0, 358, 0, 33)
+			keybindElement.Size = UDim2.new(0, 389, 0, 33)
 			keybindElement.AutoButtonColor = false
 			keybindElement.Font = Enum.Font.SourceSans
 			keybindElement.Text = ""
