@@ -366,7 +366,7 @@ function library:New(TituloString)
 			colorElement.BackgroundTransparency = 1.000
 			colorElement.ClipsDescendants = true
 			colorElement.Position = UDim2.new(0, 0, 0.566834569, 0)
-			colorElement.Size = UDim2.new(0, 352, 0, 33)
+			colorElement.Size = UDim2.new(0, 358, 0, 33)
 			colorElement.AutoButtonColor = false
 			colorElement.Font = Enum.Font.SourceSans
 			colorElement.Text = ""
@@ -376,7 +376,7 @@ function library:New(TituloString)
 				if not focusing then
 					if colorOpened then
 						colorOpened = false
-						colorElement:TweenSize(UDim2.new(0, 352, 0, 33), "InOut", "Linear", 0.08)
+						colorElement:TweenSize(UDim2.new(0, 358, 0, 33), "InOut", "Linear", 0.08)
 						wait(0.1)
 						local c = sample:Clone()
 						c.Parent = btn
@@ -396,7 +396,7 @@ function library:New(TituloString)
 						c:Destroy()
 					else
 						colorOpened = true
-						colorElement:TweenSize(UDim2.new(0, 352, 0, 141), "InOut", "Linear", 0.08, true)
+						colorElement:TweenSize(UDim2.new(0, 358, 0, 141), "InOut", "Linear", 0.08, true)
 						wait(0.1)
 						local c = sample:Clone()
 						c.Parent = btn
@@ -421,7 +421,7 @@ function library:New(TituloString)
 			colorHeader.Name = "colorHeader"
 			colorHeader.Parent = colorElement
 			colorHeader.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-			colorHeader.Size = UDim2.new(0, 352, 0, 33)
+			colorHeader.Size = UDim2.new(0, 358, 0, 33)
 			colorHeader.ClipsDescendants = true
 			colorHeader.BorderSizePixel = 1
 			colorHeader.BorderColor3 = Color3.fromRGB(159, 143, 249)
@@ -469,7 +469,7 @@ function library:New(TituloString)
 			colorInners.Parent = colorElement
 			colorInners.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 			colorInners.Position = UDim2.new(0, 0, 0.255319148, 0)
-			colorInners.Size = UDim2.new(0, 352, 0, 105)
+			colorInners.Size = UDim2.new(0, 358, 0, 105)
 			colorInners.BorderSizePixel = 1
 			colorInners.BorderColor3 = Color3.fromRGB(159, 143, 249)
 
@@ -682,5 +682,3 @@ function library:New(TituloString)
 	end
 	return amogus
 end	
-
-return library
