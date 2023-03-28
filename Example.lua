@@ -2,8 +2,8 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/amogu
 local main = library:New("test") -- new library
 local tab1 = main:CreateTab("1") --tab
 
-tab1:CreateButton("TEXT", function() --button
-    print("hi")
+tab1:CreateButton("UnloadLIB", function() --button
+    main:UnloadLIB()
 end)
 tab1:CreateToggle("HELLO MADAFAKA", function(v) --toggle
     print(v)
