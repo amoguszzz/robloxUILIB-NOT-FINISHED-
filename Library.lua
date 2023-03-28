@@ -76,7 +76,7 @@ function library:New(TituloString)
 	Juego.BorderColor3 = Color3.fromRGB(255, 255, 255)
 	Juego.BorderSizePixel = 0
 	Juego.Position = UDim2.new(0.200000003, 0, 0, 0)
-	Juego.Size = UDim2.new(0, 400, 0, 30)
+	Juego.Size = UDim2.new(0, 440, 0, 30)
 	Juego.Font = Enum.Font.SourceSans
 	Juego.Text = "Game_Name"
 	Juego.TextColor3 = Color3.fromRGB(255, 255, 255)
