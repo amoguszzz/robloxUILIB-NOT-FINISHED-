@@ -3,13 +3,49 @@ local library = {
 }	
 
 function library:New(TituloString)
+    function getsynassetfromurl(URL)
+	local getsynasset, request = getsynasset or getcustomasset or error('invalid attempt to \'getsynassetfromurl\' (custom asset retrieval function expected)'), (syn and syn.request) or (http and http.request) or (request) or error('invalid attempt to \'getsynassetfromurl\' (http request function expected)')
+	local Extension, Types, URL = '', {'.png', '.webm'}, assert(tostring(type(URL)) == 'string', 'invalid argument #1 to \'getsynassetfromurl\' (string [URL] expected, got '..tostring(type(URL))..')') and URL or nil
+	local Response, TempFile = request({
+		Url = URL,
+		Method = 'GET'
+	})
+
+	if Response.StatusCode == 200 then
+		Extension = Response.Body:sub(2, 4) == 'PNG' and '.png' or Response.Body:sub(25, 28) == 'webm' and '.webm' or nil
+	end
+
+	if Response.StatusCode == 200 and (Extension and table.find(Types, Extension)) then
+		for i = 1, 15 do
+			local Letter, Lower = string.char(math.random(65, 90)), math.random(1, 5) == 3 and true or false
+			TempFile = (not TempFile and '' .. (Lower and Letter:lower() or Letter)) or (TempFile .. (Lower and Letter:lower() or Letter)) or nil
+		end
+		
+		writefile(TempFile..Extension, Response.Body)
+		
+		task.spawn(function()
+			wait(10)
+			
+			if isfile(TempFile..Extension) then
+				delfile(TempFile..Extension)
+			end
+		end)
+		
+		return getsynasset(TempFile..Extension)
+	elseif Response.StatusCode ~= 200 or not Extension then
+		warn('unexpected \'getsynassetfromurl\' Status Error: ' .. Response.StatusMessage .. ' ('..URL..')')
+	elseif not (Extension) then
+		warn('unexpected \'getsynassetfromurl\' Error: (PNG or webm file expected)')
+	end
+	end
+
 	local ScreenGui = Instance.new("ScreenGui")
 	local Main = Instance.new("Frame")
 	local Titulo = Instance.new("TextLabel")
 	local Juego = Instance.new("TextLabel")
 	local TabsHolder = Instance.new("Frame")
 	local UIListLayout = Instance.new("UIListLayout")
-	local Container2 = Instance.new("Frame")
+	local Container2 = Instance.new("ImageLabel")
 	local Containers = Instance.new("Folder")
 	ScreenGui.Parent = game.CoreGui
 	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -102,10 +138,17 @@ function library:New(TituloString)
 	Container2.BorderSizePixel = 2
 	Container2.Position = UDim2.new(0.217999995, 0, 0.0759999976, 0)
 	Container2.Size = UDim2.new(0, 422, 0, 500)
+	
+	task.spawn(function() --background image
+		Container2.Image = getsynassetfromurl("https://tr.rbxcdn.com/3870d1dea6d73cc8d99345a90d8c7e69/420/420/Decal/Png")
+	end)
 
+	Container2.ImageRectOffset = Vector2.new(0, 0)
+    Container2.ImageRectSize = Vector2.new(0, 0)
+	Container2.Visible = true
+	
 	Containers.Name = "Containers"
 	Containers.Parent = Container2
-
 	
 	local amogus = {
 		color1 = library.color1,
@@ -135,7 +178,7 @@ function library:New(TituloString)
 	
 	function amogus:CreateTab(name) 
 		local TextButton = Instance.new("TextButton")
-		local Container2_2 = Instance.new("Frame")
+		local Container2_2 = Instance.new("ImageLabel")
 		local UIListLayout_2 = Instance.new("UIListLayout")
 		
 		TextButton.Parent = TabsHolder
@@ -157,7 +200,9 @@ function library:New(TituloString)
 		Container2_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Container2_2.Position = UDim2.new(0, 1, 0, 1)
 		Container2_2.Size = UDim2.new(0, 422, 0, 500)
-		
+		task.spawn(function()
+			Container2_2.Image = getsynassetfromurl("https://tr.rbxcdn.com/3870d1dea6d73cc8d99345a90d8c7e69/420/420/Decal/Png")
+		end)
 		UIListLayout_2.Parent = Container2_2
 		UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
