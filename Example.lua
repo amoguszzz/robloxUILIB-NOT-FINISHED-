@@ -17,5 +17,5 @@ tab1:CreateColorPicker("XD", Color3.fromRGB(255,255,255), function(v) --color pi
     main:changeColor1(v) --set UILIB accent color
 end)
 tab1:CreateKeyBind("KeyBind", Enum.KeyCode.F1, function() -- keybind
-	main:UIToggle() --make ui lib inivislble
+	main:UIToggle() --make ui lib invisible
 end)
